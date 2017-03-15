@@ -6,15 +6,15 @@ public class ShotEffectsManager : MonoBehaviour
     ParticleSystem muzzleFlash;
     [SerializeField]
     AudioSource gunAudio;
-    [SerializeField]
-    GameObject impactPrefab;
+    //[SerializeField]
+    //GameObject impactPrefab;
 
-    ParticleSystem impactEffect;
+    //ParticleSystem impactEffect;
 
     //Create the impact effect for our shots
     public void Initialize()
     {
-        impactEffect = Instantiate(impactPrefab).GetComponent<ParticleSystem>();
+        //impactEffect = Instantiate(impactPrefab).GetComponent<ParticleSystem>();
     }
 
     //Play muzzle flash and audio
@@ -29,8 +29,8 @@ public class ShotEffectsManager : MonoBehaviour
     //Play impact effect and target position
     public void PlayImpactEffect(Vector3 impactPosition)
     {
-        impactEffect.transform.position = impactPosition;
-        impactEffect.Stop();
-        impactEffect.Play();
+        //impactEffect.transform.position = impactPosition;
+        //impactEffect.Stop();
+        //impactEffect.Play();
     }
 }
