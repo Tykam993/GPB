@@ -28,10 +28,11 @@ public class PlayerShooting : NetworkBehaviour
 
         ellapsedTime += Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1") && ellapsedTime > shotCooldown)
+        if (GameObject.Find("MusicTimer").GetComponent<MusicTimer>().fire && ellapsedTime > shotCooldown)
         {
             ellapsedTime = 0f;
             CmdFireShot(firePosition.position, firePosition.forward);
+            canShoot = false;
         }
     }
 

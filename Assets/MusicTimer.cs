@@ -8,11 +8,15 @@ public class MusicTimer : NetworkBehaviour {
     [SyncVar]
     public bool fire;
     float timeLeft;
+    [SerializeField]
+    private AudioSource drawSound;
+    private bool shot;
 
 	// Use this for initialization
 	void Start () {
         fire = false;
         timeLeft = 10f;
+        shot = false;
 	}
 	
 	// Update is called once per frame
@@ -23,10 +27,20 @@ public class MusicTimer : NetworkBehaviour {
         {
             Debug.Log("Time");
 
-            int bang = Random.Range(1, 11);
+            int bang = Random.Range(1, 21);
             Debug.Log(bang);
             if (bang == 10)
+            {
+
+                if (!shot)
+                {
+                    drawSound.Play();
+                    shot = true;
+                }
                 fire = true;
+
+            }
+           
         }
 	}
 }
