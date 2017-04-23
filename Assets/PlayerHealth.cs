@@ -7,6 +7,7 @@ public class PlayerHealth : NetworkBehaviour
     int maxHealth = 3;
 
     Player player;
+
 	[SerializeField]
     int health;
 
